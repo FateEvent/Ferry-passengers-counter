@@ -9,8 +9,16 @@ function increment() {
 }
 
 function save() {
-    let countStr = count + " - "
-    saveEl.textContent += countStr
+    let countStr = "";
+
+    if (count > 0) {
+        countStr = count
+    }
+    if (saveEl.textContent != "Previous entries: ") {
+        saveEl.textContent += " - " + countStr
+    } else {
+        saveEl.textContent += countStr
+    }
     count = 0
     countEl.textContent = count
 }
